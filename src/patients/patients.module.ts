@@ -14,7 +14,6 @@ import { PatientPrivacyGuard } from './guards/patient-privacy.guard';
   controllers: [PatientsController],
   providers: [
     PatientsService,
-    JwtAuthGuard,
     RolesGuard,
     PatientPrivacyGuard,
   ],

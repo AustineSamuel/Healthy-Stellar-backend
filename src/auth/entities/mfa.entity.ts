@@ -28,7 +28,7 @@ export class MfaEntity {
   @Column({ default: true })
   isActive: boolean;
 
-  @Column({ type: 'timestamp with time zone', nullable: true })
+  @Column({ nullable: true })
   lastUsedAt: Date;
 
   @Column({ default: false })

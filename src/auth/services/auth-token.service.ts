@@ -37,7 +37,7 @@ export class AuthTokenService {
       sessionId,
     };
 
-    return this.jwtService.sign(payload, {
+    return (this.jwtService as any).sign(payload, {
       expiresIn: this.configService.get<string>('JWT_EXPIRATION', '15m'),
       secret: this.configService.get<string>('JWT_SECRET'),
       algorithm: 'HS512', // High security algorithm
@@ -56,7 +56,7 @@ export class AuthTokenService {
       type: 'refresh',
     };
 
-    return this.jwtService.sign(payload, {
+    return (this.jwtService as any).sign(payload, {
       expiresIn: this.configService.get<string>('REFRESH_TOKEN_EXPIRATION', '7d'),
       secret: this.configService.get<string>('REFRESH_TOKEN_SECRET'),
       algorithm: 'HS512',
